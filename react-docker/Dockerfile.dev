@@ -1,0 +1,14 @@
+FROM node:alpine
+RUN cd usr \
+    && mkdir src \
+    && cd src \
+    && mkdir app
+RUN chmod -R 777 /usr/src/app
+
+WORKDIR /usr/src/app
+
+COPY package.json ./
+
+RUN npm install
+COPY ./ ./
+CMD ["npm","start"]
