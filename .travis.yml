@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "start Creating an image with Dockerfile"
-  - docker build -t sg20180546/docker-nginx-travis Dockerfile.dev .
+  - docker build -t sg20180546/docker-nginx-travis Dockerfile.dev ./react-docker
 
 script:
   - docker run -e CI=true sg20180546/docker-nginx-travis npm run test -- --coverage
