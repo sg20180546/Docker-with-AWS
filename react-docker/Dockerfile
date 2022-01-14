@@ -1,8 +1,8 @@
 FROM node:alpine as builder
 WORKDIR /usr/src/app
-COPY package.json ./
+COPY react-docker/package.json ./
 RUN npm install
-COPY ./ ./
+COPY react-docker/ ./
 CMD ["npm","run","build"]
 
 FROM nginx
