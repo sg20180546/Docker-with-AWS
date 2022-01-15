@@ -7,12 +7,12 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./:/usr/src/app
+      - ./react-docker:/usr/src/app
     stdin_open: true
   tests:
     build:
       context: .
       dockerfile: Dockerfile.dev
     volumes:
-      - ./:/usr/src/app
+      - ./react-docker:/usr/src/app
     command: ["npm","run","test"]
