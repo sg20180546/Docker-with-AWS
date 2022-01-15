@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 WORKDIR /usr/src/app
-COPY react-docker/package.json .
+COPY react-docker/package*.json ./
 RUN npm install
 COPY react-docker/ ./
 RUN npm run build
