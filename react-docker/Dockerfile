@@ -3,7 +3,7 @@ WORKDIR /usr/src/app
 COPY react-docker/package.json ./
 RUN npm install
 COPY react-docker/ ./
-CMD ["npm","run","build"]
+RUN npm run build
 
 FROM nginx
 EXPOSE 80
