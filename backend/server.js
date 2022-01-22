@@ -14,6 +14,13 @@ db.pool.query(`CREATE TABLE lists(
 )`,(err,result,fields)=>{
     console.log("results: ",result);
 })
+app.get('/',(req,res)=>{
+    console.log("./ hello")
+    res.status(200).send({
+        status:true,
+        message:hello
+    })
+})
 
 app.get('/api/values',(req,res)=>{
     console.log("hello1");

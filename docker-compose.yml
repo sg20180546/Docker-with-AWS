@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
       context: ./nginx
     ports:
-      - "3000:80"
+      - "2000:3500"
   backend:
     build:
       dockerfile: Dockerfile.dev
@@ -23,16 +23,16 @@ services:
     volumes:
       - /app/node_modules
       - ./backend:/app
-  mysql:
-    build: ./mysql
-    restart: unless-stopped
-    container_name: app_mysql
-    ports:
-      - "3306:3306"
-    volumes:
-      - ./mysql/mysql_data/auto.cnf
-      - ./mysql/mysql_data:/var/lib/mysql
-      - ./mysql/sqls/:/docker-entrypoint-initdb.d/
-    environment:
-      MYSQL_ROOT_PASSWORD: asdf3179
-      MYSQL_DATABASE: myapp
+  # mysql:
+  #   build: ./mysql
+  #   restart: unless-stopped
+  #   container_name: app_mysql
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - ./mysql/mysql_data/auto.cnf
+  #     - ./mysql/mysql_data:/var/lib/mysql
+  #     - ./mysql/sqls/:/docker-entrypoint-initdb.d/
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: asdf3179
+  #     MYSQL_DATABASE: myapp
