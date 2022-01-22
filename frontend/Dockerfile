@@ -3,6 +3,7 @@ FROM node:alpine as builder
 WORKDIR /app
 
 COPY package*.json ./
+RUN chmod -R 777 /app
 RUN npm install
 COPY . .
 RUN npm run build

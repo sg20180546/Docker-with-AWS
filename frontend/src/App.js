@@ -4,25 +4,27 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function App() {
+  let f5=false;
   useEffect(()=>{
-    axios.get(`api/values`)
+    axios.get(`/api/values`)
       .then(response=>{
         console.log('response',response)
         setLists(response.data);
       })
-
     },[])
   const changeHandler=(event)=>{
     setValue(event.target.value);
+    console.log(event.target.value)
   }
   const submitHandler=(event)=>{
     event.preventDefault();
-    axios.post('api/value',{value})
+    axios.post('/api/value',{value})
     .then(response=>{
       if(response.data.success){
           console.log('response: ',response);
           setLists([...setLists,response.data]);
           setValue("");
+          console.log("hello");
       }else{
         alert("db failed!");
       }

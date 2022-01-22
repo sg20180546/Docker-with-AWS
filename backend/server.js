@@ -12,10 +12,11 @@ db.pool.query(`CREATE TABLE lists(
     value TEXT,
     PRIMARY KEY (id)
 )`,(err,result,fields)=>{
-    console.log("results: ",results);
+    console.log("results: ",result);
 })
 
 app.get('/api/values',(req,res)=>{
+    console.log("hello1");
     db.pool.query('SELECT * FROM lists;',
     (err,results,fields)=>{
         if(err) return res.status(500).send(err);
@@ -24,10 +25,11 @@ app.get('/api/values',(req,res)=>{
 })
 
 app.post('/api/value',(req,res,next)=>{
-    db.pool.query(`INSERT INTO lists (value) VALUES(${req.body.value})`,
+    console.log("hello2");
+    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
     (err,results,field)=>{
         if(err) return res.status(500).send(err);
-        else return res.json({sucess:true,value:req.body.value});
+        else return res.json({success:true,value:req.body.value});
     })
 })
 
