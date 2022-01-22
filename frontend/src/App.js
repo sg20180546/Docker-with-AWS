@@ -39,6 +39,9 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+        <a>
+          Learn React
+        </a>
         <div>
           {list&&list.map((list,index)=>(
             <li key={index}>{list.value} </li>
