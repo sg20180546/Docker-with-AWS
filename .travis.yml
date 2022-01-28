@@ -18,5 +18,16 @@ after_success:
   - docker build -t sg20180546/docker-nginx  ./nginx
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
   - docker push sg20180546/docker-frontend
-  - docker push sg20180546/docker-backend
+  - docker push sg20180546/doc  access_key_id: $AwsAccessKeyker-backend
   - docker push sg20180546/docker-nginx
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-1"
+  app: "sg20180546_docker_fullstack"
+  env: Sg20180546dockerfullstack-env
+  bucket_name: elasticbeanstalk-us-east-1-830503619726
+  bucket_path: "sg20180546_docker_fullstack"
+  on:
+    branch: main
+  access_key_id: $AwsFullstackAccessKey
+  secret_key_id: $AwsFullstackSecretKey
