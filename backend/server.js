@@ -35,6 +35,16 @@ app.post('/api/value',(req,res,next)=>{
     console.log("hello2");
     db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
     (err,results,field)=>{
+        console.log(process.env.MYSQL_HOST)
+        console.log(process.env.MYSQL_USER)
+        console.log(process.env.MYSQL_PASSWORD)
+        console.log(process.env.MYSQL_PORT)
+        console.log(process.env.MYSQL_DATABASE)
+        // host:process.env.MYSQL_HOST,
+        // user:process.env.MYSQL_USER,
+        // password:process.env.MYSQL_PASSWORD,
+        // database:process.env.MYSQL_DATABASE,
+        // port:process.env.MYSQL_PORT
         if(err) return res.status(500).send(err);
         else return res.json({success:true,value:req.body.value});
     })
