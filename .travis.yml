@@ -18,7 +18,7 @@ after_success:
   - docker build -t sg20180546/docker-nginx  ./nginx
   - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
   - docker push sg20180546/docker-frontend
-  - docker push sg20180546/doc  access_key_id: $AwsAccessKeyker-backend
+  - docker push sg20180546/docker-backend
   - docker push sg20180546/docker-nginx
 deploy:
   provider: elasticbeanstalk
