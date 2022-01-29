@@ -24,7 +24,7 @@ services:
       - /app/node_modules
       - ./backend:/app
     environment:
-      MYSQL_HOST: docker-sg20180546.cnio27em9obt.us-east-1.rds.amazonaws.com
+      MYSQL_HOST: mysql
       MYSQL_USER: root
       MYSQL_ROOT_PASSWORD: asdf3179
       MYSQL_DATABASE: myapp
