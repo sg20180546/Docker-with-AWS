@@ -23,7 +23,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/api/values',(req,res)=>{
-    console.log("hello1");
+    // console.log("hello1");
     console.log(process.env.MYSQL_HOST)
     console.log(process.env.MYSQL_USER)
     console.log(process.env.MYSQL_PASSWORD)
