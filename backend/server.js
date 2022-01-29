@@ -37,22 +37,15 @@ app.get('/api/values',(req,res)=>{
 })
 
 app.post('/api/value',(req,res,next)=>{
-    console.log("hello2");
-    const envdata={
-        host:process.env.MYSQL_HOST,
-        user:process.env.MYSQL_USER,
-        password:process.env.MYSQL_PASSWORD,
-        port:process.env.MYSQL_PORT,
-        db:process.env.MYSQL_DATABASE
-    };
-    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
+    const envdata="backend works";
+    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}");`,
     (err,results,field)=>{
         // host:process.env.MYSQL_HOST,
         // user:process.env.MYSQL_USER,
         // password:process.env.MYSQL_PASSWORD,
         // database:process.env.MYSQL_DATABASE,
         // port:process.env.MYSQL_PORT
-        if(err) return res.status(500).send("error");
+        if(err) return res.status(500).send("error",envdata);
         else return res.json({success:true,value:req.body.value});
     })
 })
