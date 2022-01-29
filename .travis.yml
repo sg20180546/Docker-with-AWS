@@ -30,4 +30,4 @@ deploy:
   on:
     branch: main
   access_key_id: $AwsFullstackAccessKey
-  secret_key_id: $AwsFullstackSecretKey
+  secret_access_key: $AwsFullstackSecretKey
