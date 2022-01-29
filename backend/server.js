@@ -52,8 +52,7 @@ app.post('/api/value',(req,res,next)=>{
         // password:process.env.MYSQL_PASSWORD,
         // database:process.env.MYSQL_DATABASE,
         // port:process.env.MYSQL_PORT
-        if(err) return res.status(500).send(
-            envdata);
+        if(err) return res.status(500).send("error");
         else return res.json({success:true,value:req.body.value});
     })
 })
