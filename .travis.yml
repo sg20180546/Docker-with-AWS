@@ -23,10 +23,10 @@ after_success:
 deploy:
   provider: elasticbeanstalk
   region: "us-east-1"
-  app: "sg20180546_docker_fullstack"
-  env: Sg20180546dockerfullstack-env
+  app: "dockerfullstackapp"
+  env: Dockerfullstackapp-env
   bucket_name: elasticbeanstalk-us-east-1-830503619726
-  bucket_path: "sg20180546_docker_fullstack"
+  bucket_path: "dockerfullstackapp"
   on:
     branch: main
   access_key_id: $AwsFullstackAccessKey

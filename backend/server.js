@@ -38,7 +38,7 @@ app.get('/api/values',(req,res)=>{
 
 app.post('/api/value',(req,res,next)=>{
     const envdata="backend works";
-    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}");`,
+    db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
     (err,results,field)=>{
         // host:process.env.MYSQL_HOST,
         // user:process.env.MYSQL_USER,
