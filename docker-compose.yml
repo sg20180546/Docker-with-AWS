@@ -14,7 +14,7 @@ services:
       dockerfile: Dockerfile
       context: ./nginx
     ports:
-      - "2000:3500"
+      - "80:3500"
   backend:
     build:
       dockerfile: Dockerfile.dev
