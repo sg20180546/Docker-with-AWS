@@ -13,7 +13,7 @@ db.pool.query(`CREATE TABLE lists(
     PRIMARY KEY (id)
 )`,(err,result,fields)=>{
 })
-app.get('/',(req,res)=>{
+app.get('/hello',(req,res)=>{
     // console.log("./ hello")
     res.status(200).send({
         status:true,
@@ -32,7 +32,6 @@ app.get('/api/values',(req,res)=>{
 })
 
 app.post('/api/value',(req,res,next)=>{
-    const envdata="backend works";
     db.pool.query(`INSERT INTO lists (value) VALUES("${req.body.value}")`,
     (err,results,field)=>{
         // host:process.env.MYSQL_HOST,
