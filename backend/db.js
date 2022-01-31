@@ -1,10 +1,10 @@
 const mysql=require('mysql');
 const pool=mysql.createPool({
     connectionLimit:10,
-    host:"docker-sg20180546.cnio27em9obt.us-east-1.rds.amazonaws.com",
-    user:"root",
-    password:"asdf3179",
-    database:"myapp",
-    port:3306
+    host:process.env.MYSQL_HOST,
+    user:process.env.MYSQL_USER,
+    password:process.env.MYSQL_PASSWORD,
+    database:process.env.MYSQL_DATABASE,
+    port:process.env.MYSQL_PORT
 })
 exports.pool =pool;
