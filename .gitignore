@@ -1,5 +1,5 @@
 node_modules
-react-docker-key.pem
+*.pem
 react-docker-private.ppk
 
 

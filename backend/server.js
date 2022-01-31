@@ -15,20 +15,15 @@ db.pool.query(`CREATE TABLE lists(
     console.log("results: ",result);
 })
 app.get('/',(req,res)=>{
-    console.log("./ hello")
+    // console.log("./ hello")
     res.status(200).send({
         status:true,
-        message:hello
+        message:"hello"
     })
 })
 
 app.get('/api/values',(req,res)=>{
     // console.log("hello1");
-    console.log(process.env.MYSQL_HOST)
-    console.log(process.env.MYSQL_USER)
-    console.log(process.env.MYSQL_PASSWORD)
-    console.log(process.env.MYSQL_PORT)
-    console.log(process.env.MYSQL_DATABASE)
     db.pool.query('SELECT * FROM lists;',
     (err,results,fields)=>{
         if(err) return res.status(500).send(err);
@@ -45,7 +40,7 @@ app.post('/api/value',(req,res,next)=>{
         // password:process.env.MYSQL_PASSWORD,
         // database:process.env.MYSQL_DATABASE,
         // port:process.env.MYSQL_PORT
-        if(err) return res.status(500).send("backend works");
+        if(err) return res.status(501).send("backend works");
         else return res.json({success:true,value:req.body.value});
     })
 })
