@@ -2,7 +2,6 @@ node_modules
 *.pem
 react-docker-private.ppk
 
-
 /coverage
 
 # production
