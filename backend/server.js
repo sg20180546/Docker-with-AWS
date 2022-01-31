@@ -12,7 +12,6 @@ db.pool.query(`CREATE TABLE lists(
     value TEXT,
     PRIMARY KEY (id)
 )`,(err,result,fields)=>{
-    console.log("results: ",result);
 })
 app.get('/',(req,res)=>{
     // console.log("./ hello")
