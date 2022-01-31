@@ -23,9 +23,10 @@ app.get('/',(req,res)=>{
 
 app.get('/api/values',(req,res)=>{
     // console.log("hello1");
+
     db.pool.query('SELECT * FROM lists;',
     (err,results,fields)=>{
-        if(err) return res.status(500).send(err);
+        if(err) return res.status(500).send("backend working1 but db");
         else return res.json(results);
     })
 })
@@ -39,7 +40,7 @@ app.post('/api/value',(req,res,next)=>{
         // password:process.env.MYSQL_PASSWORD,
         // database:process.env.MYSQL_DATABASE,
         // port:process.env.MYSQL_PORT
-        if(err) return res.status(501).send("backend works");
+        if(err) return res.status(501).send("backend working2 but db");
         else return res.json({success:true,value:req.body.value});
     })
 })
