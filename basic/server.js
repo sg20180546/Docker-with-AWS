@@ -11,4 +11,4 @@ app.get('/',(req,res)=>{
 
 app.listen(PORT,HOST);
 
-console.log(`server is running on ${HOST}:${PORT}`);
+console.log(`server is running on${HOST}:${PORT}`);
