@@ -4,12 +4,7 @@ import {useEffect, useState} from 'react';
 import axios from 'axios';
 
 function App() {
-  let f5=false;
   useEffect(()=>{
-    axios.get(`/api/hello`)
-      .then(response=>{
-        console.log(response);
-      })
     axios.get(`/api/values`)
       .then(response=>{
         console.log('response',response)
@@ -32,6 +27,12 @@ function App() {
       }else{
         alert("db failed!");
       }
+    })
+  }
+  const gethello=(event)=>{
+    axios.get(`/api/hello`)
+    .then(response=>{
+      console.log('response',response)
     })
   }
   const [list,setLists]=useState([]);
@@ -57,6 +58,7 @@ function App() {
           value={value} />
           <button type="submit">confirm</button>
           </form>
+          <button onClick={gethello}>get hello</button>
           </div>
       </header>
     </div>
