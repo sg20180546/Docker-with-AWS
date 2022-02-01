@@ -13,7 +13,7 @@ db.pool.query(`CREATE TABLE lists(
     PRIMARY KEY (id)
 )`,(err,result,fields)=>{
 })
-app.get('/hello',(req,res)=>{
+app.get('api/hello',(req,res)=>{
     // console.log("./ hello")
     res.status(200).send({
         status:true,

@@ -6,7 +6,7 @@ import axios from 'axios';
 function App() {
   let f5=false;
   useEffect(()=>{
-    axios.get(`/hello`)
+    axios.get(`/api/hello`)
       .then(response=>{
         console.log(response);
       })
