@@ -6,12 +6,12 @@ const db=require('./db');
 const app=express();
 
 app.use(bodyParser.json());
-// db.pool.query(`CREATE TABLE lists(
-//     id INTEGER AUTO_INCREMENT,
-//     value TEXT,
-//     PRIMARY KEY (id)
-// );`,(err,result,fields)=>{
-// })
+db.pool.query(`CREATE TABLE lists(
+    id INTEGER AUTO_INCREMENT,
+    value TEXT,
+    PRIMARY KEY (id)
+);`,(err,result,fields)=>{
+})
 app.get('/api/hello',(req,res)=>{
     res.status(200).send({
         status:true,
