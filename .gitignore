@@ -3,7 +3,7 @@ node_modules
 react-docker-private.ppk
 
 /coverage
-
+/legacy
 # production
 /react-docker/build
 /react-docker/.pnp

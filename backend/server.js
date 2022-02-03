@@ -6,7 +6,6 @@ const db=require('./db');
 const app=express();
 
 app.use(bodyParser.json());
-db.pool.query(`USE myapp;`)
 db.pool.query(`CREATE TABLE lists(
     id INTEGER AUTO_INCREMENT,
     value TEXT,
@@ -26,7 +25,10 @@ app.get('/api/values',(req,res)=>{
 
     db.pool.query('SELECT * FROM lists;',
     (err,results,fields)=>{
-        if(err) return res.status(500).send("backend working1 but db");
+        if(err){
+            db.pool.query(`USE myapp;`)
+            return res.status(500).send("backend working1 but db");
+        } 
         else return res.json(results);
     })
 })
