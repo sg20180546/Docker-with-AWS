@@ -37,7 +37,7 @@ app.get('/api/values',(req,res)=>{
 
 
 app.post('/api/value',(req,res,next)=>{
-    db.pool.query(`INSERT INTO lists (value) VALUE("${req.body.value}")`,
+    db.pool.query(`INSERT INTO lists (value) VALUE("${req.body.value}");`,
     (err,results,field)=>{
         if(err) return res.status(501).send("backend working2 but db");
         else return res.json({success:true,value:req.body.value});
