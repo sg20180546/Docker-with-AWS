@@ -30,7 +30,7 @@ app.get('/api/values',(req,res)=>{
             if(err){
                 return res.status(500).send("backend working1 but db");
             } 
-            else return res.json(results);
+            else return res.json(result);
         })
 
 })
